@@ -15,12 +15,10 @@
     <h1>Puppy Pet</h1>
     <button id="btnReset" title="Reset game" aria-label="Reset game">↺</button>
   </header>
-
   <section id="scene" aria-label="Puppy yard">
-    <canvas id="game" width="380" height="260" role="img" aria-label="Animated puppy"></canvas>
+    <canvas id="game" width="420" height="280" role="img" aria-label="Animated puppy"></canvas>
     <div id="dayBanner"></div>
   </section>
-
   <section id="stats" aria-label="Puppy status">
     <div class="meter"><label>Hunger</label><progress id="pHunger" max="100" value="0"></progress></div>
     <div class="meter"><label>Fun</label><progress id="pFun" max="100" value="0"></progress></div>
@@ -28,23 +26,18 @@
     <div class="meter"><label>Energy</label><progress id="pEnergy" max="100" value="0"></progress></div>
     <div class="meter mood"><label>Mood</label><progress id="pMood" max="100" value="0"></progress></div>
   </section>
-
   <section id="actions" aria-label="Actions">
     <button id="btnFeed">Feed 🍖</button>
     <button id="btnPlay">Play 🎾</button>
     <button id="btnClean">Clean 🧽</button>
     <button id="btnSleep">Sleep 😴</button>
   </section>
-
   <section id="log" aria-label="Event log" tabindex="0"></section>
 </main>
-
 <script src="main.js"></script>
 <script>
 if ('serviceWorker' in navigator) {
-  window.addEventListener('load', () => {
-    navigator.serviceWorker.register('./service-worker.js').catch(()=>{});
-  });
+  window.addEventListener('load', () => navigator.serviceWorker.register('./service-worker.js').catch(()=>{}));
 }
 </script>
 </body>
