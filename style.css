@@ -1,0 +1,22 @@
+*{box-sizing:border-box}html,body{height:100%}body{margin:0;font-family:system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif;background:#0b0b0f;color:#e8e8ef;-webkit-tap-highlight-color:transparent}
+#app{max-width:480px;margin:0 auto;padding:12px;display:flex;flex-direction:column;gap:12px}
+header{display:flex;align-items:center;justify-content:space-between}
+h1{font-size:1.25rem;margin:0}
+header button{font-size:1.1rem;background:#1a1a22;border:1px solid #2a2a33;color:#e8e8ef;border-radius:12px;padding:.4rem .6rem}
+#scene{position:relative;border:1px solid #1d1d27;border-radius:16px;overflow:hidden;background:linear-gradient(#74c7fd,#c8efff 50%,#74c7fd 100%)}
+#dayBanner{position:absolute;left:0;top:0;right:0;height:4px;background:#ffd166}
+#game{width:100%;height:auto;display:block}
+#stats{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.meter{background:#12121a;border:1px solid #232334;border-radius:12px;padding:6px}
+.meter label{display:block;font-size:.8rem;color:#b7b7c9;margin-bottom:4px}
+progress{width:100%;height:14px;-webkit-appearance:none;appearance:none}
+progress::-webkit-progress-bar{background:#191926;border-radius:10px}
+progress::-webkit-progress-value{border-radius:10px;background:#6ee7b7}
+.mood progress::-webkit-progress-value{background:#93c5fd}
+#actions{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+#actions button{font-size:1.05rem;padding:.9rem;border-radius:14px;border:1px solid #2a2a33;background:#1a1a22;color:#e8e8ef}
+#actions button:active{transform:scale(.98)}
+#log{min-height:64px;max-height:120px;overflow:auto;border:1px solid #1d1d27;border-radius:12px;padding:8px;background:#0f0f16;font-size:.9rem}
+@media (prefers-reduced-motion: reduce){
+  *{animation:none!important;transition:none!important}
+}
