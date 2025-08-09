@@ -1,47 +1,51 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-  <title>Pocket Pet</title>
-  <link rel="stylesheet" href="style.css">
-  <meta name="theme-color" content="#0b0b0f">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<title>Puppy Pet</title>
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#0b0b0f">
+<link rel="apple-touch-icon" href="icon-192.png">
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <main id="app" aria-live="polite">
-    <header>
-      <h1>Pocket Pet</h1>
-      <button id="btnReset" title="Reset game" aria-label="Reset game">↺</button>
-    </header>
+<main id="app" aria-live="polite">
+  <header>
+    <h1>Puppy Pet</h1>
+    <button id="btnReset" title="Reset game" aria-label="Reset game">↺</button>
+  </header>
 
-    <section id="scene" aria-label="Pet habitat">
-      <canvas id="game" width="360" height="240" role="img" aria-label="Animated pet"></canvas>
-      <div id="dayBanner"></div>
-    </section>
+  <section id="scene" aria-label="Puppy yard">
+    <canvas id="game" width="380" height="260" role="img" aria-label="Animated puppy"></canvas>
+    <div id="dayBanner"></div>
+  </section>
 
-    <section id="stats" aria-label="Pet status">
-      <div class="meter"><label>Hunger</label><progress id="pHunger" max="100" value="0"></progress></div>
-      <div class="meter"><label>Fun</label><progress id="pFun" max="100" value="0"></progress></div>
-      <div class="meter"><label>Clean</label><progress id="pClean" max="100" value="0"></progress></div>
-      <div class="meter"><label>Energy</label><progress id="pEnergy" max="100" value="0"></progress></div>
-      <div class="meter mood"><label>Mood</label><progress id="pMood" max="100" value="0"></progress></div>
-    </section>
+  <section id="stats" aria-label="Puppy status">
+    <div class="meter"><label>Hunger</label><progress id="pHunger" max="100" value="0"></progress></div>
+    <div class="meter"><label>Fun</label><progress id="pFun" max="100" value="0"></progress></div>
+    <div class="meter"><label>Clean</label><progress id="pClean" max="100" value="0"></progress></div>
+    <div class="meter"><label>Energy</label><progress id="pEnergy" max="100" value="0"></progress></div>
+    <div class="meter mood"><label>Mood</label><progress id="pMood" max="100" value="0"></progress></div>
+  </section>
 
-    <section id="actions" aria-label="Actions">
-      <button id="btnFeed">Feed 🍖</button>
-      <button id="btnPlay">Play 🎾</button>
-      <button id="btnClean">Clean 🧽</button>
-      <button id="btnSleep">Sleep 😴</button>
-    </section>
+  <section id="actions" aria-label="Actions">
+    <button id="btnFeed">Feed 🍖</button>
+    <button id="btnPlay">Play 🎾</button>
+    <button id="btnClean">Clean 🧽</button>
+    <button id="btnSleep">Sleep 😴</button>
+  </section>
 
-    <section id="log" aria-label="Event log" tabindex="0"></section>
+  <section id="log" aria-label="Event log" tabindex="0"></section>
+</main>
 
-    <dialog id="tutorial">
-      <h2>Your pet just hatched</h2>
-      <p>Tap buttons. Watch meters move. The pet now animates clearly for each action.</p>
-      <button id="btnStart">Start</button>
-    </dialog>
-  </main>
-  <script src="main.js"></script>
+<script src="main.js"></script>
+<script>
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('./service-worker.js').catch(()=>{});
+  });
+}
+</script>
 </body>
 </html>
